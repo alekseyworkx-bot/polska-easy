@@ -1,0 +1,1281 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Polska Easy — курс польської мови для українців. Два рівні, 20 уроків, живі фрази з транскрипцією та діалоги з реального життя.">
+<meta name="theme-color" content="#FAF2E4">
+<meta property="og:title" content="Polska Easy 🇵🇱">
+<meta property="og:description" content="Курс польської для українців: 20 уроків, живі фрази, діалоги з життя.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🇵🇱</text></svg>">
+<title>Polska Easy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bitter:wght@600;700;800&family=Golos+Text:wght@400;500;600;700;800&display=swap">
+<style>
+:root{
+  --paper:#FAF2E4;
+  --paper-warm:#F4E7D3;
+  --card:#FFFCF7;
+  --ink:#3A211A;
+  --ink-soft:#7A5C4B;
+  --ink-mute:#A08872;
+  --clay:#C0492A;
+  --clay-deep:#8E3319;
+  --clay-wash:#F7E1D5;
+  --moss:#4E7A3E;
+  --moss-wash:#E7F0DC;
+  --sand:#E8D7BF;
+  --roast:#3B231A;
+  --r-lg:24px;
+  --r-md:18px;
+  --r-sm:12px;
+  --shadow-sm:0 1px 2px rgba(90,52,30,.05);
+  --shadow-md:0 2px 6px rgba(90,52,30,.06), 0 14px 34px rgba(90,52,30,.09);
+  --font-d:'Bitter',Georgia,'Times New Roman',serif;
+  --font-b:'Golos Text',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background:var(--paper);
+  background-image:radial-gradient(circle at 1px 1px, rgba(58,33,26,.055) 1px, transparent 0);
+  background-size:22px 22px;
+  color:var(--ink);
+  font-family:var(--font-b);
+  font-size:17px;line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+h1,h2,h3{font-family:var(--font-d);font-weight:800;line-height:1.14;letter-spacing:-.015em;margin:0;text-wrap:balance}
+p{margin:0}
+button{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--clay);outline-offset:3px;border-radius:8px}
+.wrap{width:100%;max-width:700px;margin:0 auto;padding:0 18px}
+
+/* ── HEADER ─────────────────────────── */
+.top{
+  position:sticky;top:0;z-index:60;
+  background:rgba(250,242,228,.92);
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--sand);
+}
+.top .bar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 0}
+.brand{font-family:var(--font-d);font-weight:800;font-size:19px;letter-spacing:-.02em;white-space:nowrap}
+.brand span{color:var(--clay)}
+.counter{
+  display:flex;align-items:center;gap:7px;
+  font-size:13px;font-weight:700;color:var(--ink-soft);
+  background:var(--card);border:1px solid var(--sand);
+  padding:5px 11px;border-radius:100px;white-space:nowrap;
+  font-variant-numeric:tabular-nums;
+}
+.counter b{color:var(--clay)}
+.topline{height:3px;background:var(--sand)}
+.topline i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--clay),#E4763F);transition:width .5s cubic-bezier(.2,.8,.3,1)}
+
+/* ── HERO ───────────────────────────── */
+.hero{padding:36px 0 8px;text-align:center;position:relative}
+.postcard{
+  position:relative;display:block;width:max-content;margin:0 auto 22px;
+  background:var(--card);padding:12px;border-radius:26px;
+  border:1px solid var(--sand);box-shadow:var(--shadow-md);
+}
+.postcard .frame{
+  position:relative;width:146px;height:146px;border-radius:18px;overflow:hidden;
+  background:linear-gradient(150deg,#EAB59A,var(--clay));
+}
+.postcard img{width:100%;height:100%;object-fit:cover;display:block}
+.postcard .fallback{position:absolute;inset:0;display:none;align-items:center;justify-content:center;font-size:60px}
+.stamp{
+  position:absolute;right:-15px;top:-15px;
+  width:60px;height:60px;border-radius:50%;
+  background:var(--clay);color:#fff;
+  display:grid;place-items:center;text-align:center;
+  font-family:var(--font-d);font-weight:800;font-size:11px;line-height:1.1;
+  letter-spacing:.04em;text-transform:uppercase;
+  box-shadow:0 6px 18px rgba(192,73,42,.4);
+  transform:rotate(-11deg);
+}
+.tracking{
+  display:inline-flex;align-items:center;gap:9px;
+  background:var(--clay-wash);color:var(--clay-deep);
+  font-size:13.5px;font-weight:700;
+  padding:8px 16px;border-radius:100px;margin-bottom:16px;
+}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--clay);animation:pulse 1.9s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(.75)}}
+.hero h1{font-size:clamp(31px,7.4vw,45px);margin-bottom:8px}
+.hero h1 .accent{display:block;color:var(--clay);margin-top:6px}
+.hero .lead{font-size:17px;color:var(--ink-soft);max-width:44ch;margin:14px auto 0}
+.author{
+  display:inline-flex;align-items:center;gap:8px;margin-top:18px;
+  font-size:14px;color:var(--ink-soft);
+  border-top:1px solid var(--sand);padding-top:16px;
+}
+.author b{color:var(--ink);font-weight:700}
+
+/* ── TRACKER ────────────────────────── */
+.tracker{
+  margin:30px 0 4px;background:var(--card);border:1px solid var(--sand);
+  border-radius:var(--r-lg);padding:20px;box-shadow:var(--shadow-sm);
+}
+.tracker .head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:12px}
+.tracker .head h2{font-size:18px;font-weight:700}
+.tracker .head .n{font-size:15px;font-weight:800;color:var(--clay);font-variant-numeric:tabular-nums;white-space:nowrap}
+.track-bar{height:12px;background:var(--paper-warm);border-radius:100px;overflow:hidden;box-shadow:inset 0 1px 2px rgba(90,52,30,.08)}
+.track-bar i{display:block;height:100%;width:0;border-radius:100px;background:linear-gradient(90deg,#E4763F,var(--clay));transition:width .55s cubic-bezier(.2,.8,.3,1)}
+.miles{display:flex;gap:8px;margin-top:14px}
+.mile{
+  flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;
+  padding:9px 4px;border-radius:var(--r-sm);
+  background:var(--paper);border:1px dashed var(--sand);
+  font-size:11.5px;font-weight:700;color:var(--ink-mute);text-align:center;
+  transition:.3s;
+}
+.mile .e{font-size:19px;filter:grayscale(1);opacity:.4;transition:.3s}
+.mile.hit{background:var(--moss-wash);border-color:#C4D9B4;border-style:solid;color:var(--moss)}
+.mile.hit .e{filter:none;opacity:1}
+.tracker .reset{display:block;margin:14px auto 0;background:none;border:0;font-size:12.5px;color:var(--ink-mute);cursor:pointer;text-decoration:underline;padding:4px}
+
+/* ── SECTIONS ───────────────────────── */
+section{padding:36px 0}
+.eyebrow{
+  font-size:11.5px;font-weight:800;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--clay);margin-bottom:8px;
+}
+.s-title{font-size:clamp(24px,5.6vw,31px);margin-bottom:8px}
+.s-sub{color:var(--ink-soft);font-size:16px;margin-bottom:22px;max-width:50ch}
+
+/* ── LEVEL CARDS ────────────────────── */
+.levels{display:grid;gap:14px}
+@media(min-width:620px){.levels{grid-template-columns:1fr 1fr}}
+.level{
+  position:relative;text-align:left;cursor:pointer;overflow:hidden;
+  background:var(--card);border:2px solid var(--sand);border-radius:var(--r-lg);
+  padding:22px 20px 18px;box-shadow:var(--shadow-sm);
+  transition:transform .18s,border-color .2s,box-shadow .2s,background .2s;
+}
+.level:hover{border-color:#D9BFA5;transform:translateY(-2px);box-shadow:var(--shadow-md)}
+.level:active{transform:translateY(0) scale(.99)}
+.level.active{border-color:var(--clay);background:#FFF8F1;box-shadow:0 10px 30px rgba(192,73,42,.16)}
+.level .icon{
+  width:52px;height:52px;border-radius:16px;display:grid;place-items:center;
+  font-size:27px;background:var(--clay-wash);margin-bottom:13px;
+}
+.level.active .icon{background:var(--clay);}
+.level h3{font-size:24px;margin-bottom:6px}
+.level p{font-size:14.5px;color:var(--ink-soft);margin-bottom:16px;min-height:44px}
+.level .foot{display:flex;align-items:center;gap:10px}
+.level .mini-bar{flex:1;height:7px;background:var(--paper-warm);border-radius:100px;overflow:hidden}
+.level .mini-bar i{display:block;height:100%;width:0;background:var(--clay);border-radius:100px;transition:width .5s}
+.level .cnt{font-size:12.5px;font-weight:800;color:var(--ink-soft);font-variant-numeric:tabular-nums;white-space:nowrap}
+.level .arrow{
+  position:absolute;right:18px;top:22px;font-size:17px;color:var(--ink-mute);
+  transition:transform .2s,color .2s;
+}
+.level.active .arrow{color:var(--clay);transform:translateX(3px)}
+
+/* ── SEARCH ─────────────────────────── */
+.search{position:relative;margin-bottom:16px}
+.search input{
+  width:100%;font:inherit;font-size:16px;
+  padding:14px 44px 14px 44px;border-radius:100px;
+  background:var(--card);border:1.5px solid var(--sand);color:var(--ink);
+  transition:border-color .2s;
+}
+.search input::placeholder{color:var(--ink-mute)}
+.search input:focus{outline:none;border-color:var(--clay)}
+.search .ico{position:absolute;left:17px;top:50%;transform:translateY(-50%);font-size:16px;opacity:.55;pointer-events:none}
+.search .clr{
+  position:absolute;right:8px;top:50%;transform:translateY(-50%);
+  width:32px;height:32px;border:0;border-radius:50%;background:var(--paper-warm);
+  cursor:pointer;display:none;place-items:center;font-size:14px;color:var(--ink-soft);
+}
+.search.filled .clr{display:grid}
+.no-res{display:none;text-align:center;padding:30px 10px;color:var(--ink-soft);font-size:15.5px}
+.no-res.show{display:block}
+.xlvl{display:none;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;
+  margin-top:14px;padding:15px 18px;border-radius:var(--r-md);
+  background:var(--clay-wash);color:var(--clay-deep);font-size:14.5px;font-weight:600;text-align:center}
+.xlvl.show{display:flex}
+.xlvl button{background:var(--clay);color:#fff;border:0;border-radius:100px;
+  padding:9px 18px;font-weight:700;font-size:14px;cursor:pointer;transition:.18s}
+.xlvl button:hover{background:#D2542F}
+
+/* ── LESSONS ────────────────────────── */
+#lessons{display:none}
+#lessons.show{display:block;animation:rise .45s cubic-bezier(.2,.8,.3,1)}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.lesson{
+  background:var(--card);border:1px solid var(--sand);border-radius:var(--r-lg);
+  margin-bottom:12px;overflow:hidden;box-shadow:var(--shadow-sm);
+  transition:box-shadow .2s,border-color .2s;
+}
+.lesson.open{box-shadow:var(--shadow-md);border-color:#DFC7AC}
+.lesson.hide{display:none}
+.l-head{
+  width:100%;display:flex;align-items:center;gap:14px;text-align:left;
+  background:none;border:0;cursor:pointer;padding:16px 18px;
+}
+.l-num{
+  flex:0 0 auto;width:42px;height:42px;border-radius:13px;
+  display:grid;place-items:center;
+  font-family:var(--font-d);font-weight:800;font-size:16px;
+  background:var(--paper-warm);color:var(--clay-deep);
+  border:1px solid var(--sand);transition:.25s;
+  font-variant-numeric:tabular-nums;
+}
+.lesson.done .l-num{background:var(--moss);color:#fff;border-color:var(--moss)}
+.l-txt{flex:1;min-width:0}
+.l-txt .t{font-family:var(--font-d);font-weight:700;font-size:17.5px;line-height:1.28;display:block}
+.l-txt .m{font-size:12.5px;color:var(--ink-mute);font-weight:600;margin-top:4px;display:block}
+.l-chev{flex:0 0 auto;color:var(--ink-mute);transition:transform .28s;font-size:12px}
+.lesson.open .l-chev{transform:rotate(180deg)}
+.l-body{display:none;padding:0 18px 20px}
+.lesson.open .l-body{display:block}
+
+.legend{
+  display:grid;gap:5px;padding:13px 15px;border-radius:var(--r-md);
+  background:var(--paper);border:1px dashed var(--sand);
+  font-size:12.5px;color:var(--ink-soft);margin-bottom:6px;
+}
+.legend b{color:var(--ink);font-weight:700}
+.legend .tr{color:var(--clay);font-weight:600}
+
+.block-t{
+  font-family:var(--font-d);font-weight:700;font-size:13px;
+  letter-spacing:.05em;text-transform:uppercase;color:var(--clay);
+  margin:20px 0 10px;display:flex;align-items:center;gap:9px;
+}
+.block-t:after{content:"";flex:1;height:1px;background:var(--sand)}
+
+.phrase{
+  display:flex;gap:12px;align-items:flex-start;width:100%;text-align:left;
+  background:none;border:0;border-radius:var(--r-md);
+  padding:12px 12px 12px 10px;cursor:pointer;
+  transition:background .16s;
+}
+.phrase:hover{background:var(--paper)}
+.phrase:active{background:var(--clay-wash)}
+.phrase.hide{display:none}
+.phrase .i{
+  flex:0 0 22px;font-size:12px;font-weight:700;color:var(--ink-mute);
+  padding-top:4px;font-variant-numeric:tabular-nums;
+}
+.phrase .body{flex:1;min-width:0}
+.phrase .pl{display:block;font-size:18px;font-weight:700;letter-spacing:-.01em;line-height:1.3}
+.phrase .tr{
+  display:inline-block;margin-top:5px;
+  font-size:13px;font-weight:600;color:var(--clay-deep);
+  background:var(--clay-wash);padding:2px 9px;border-radius:100px;
+}
+.phrase .uk{display:block;font-size:15.5px;color:var(--ink-soft);margin-top:6px}
+.phrase .cp{flex:0 0 auto;font-size:13px;opacity:0;transition:.15s;padding-top:6px}
+.phrase:hover .cp{opacity:.45}
+
+/* ── DIALOG ─────────────────────────── */
+.dlg-note{font-size:13px;color:var(--ink-mute);margin-bottom:12px}
+.chat{display:flex;flex-direction:column;gap:12px;background:var(--paper);border-radius:var(--r-md);padding:16px 14px}
+.msg{max-width:88%;display:flex;flex-direction:column;gap:3px}
+.msg .who{display:block;font-size:11px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;color:var(--ink-mute);padding:0 4px}
+.bub{padding:11px 14px;border-radius:18px;background:var(--card);border:1px solid var(--sand)}
+.bub .p{display:block;font-size:16.5px;font-weight:700;line-height:1.35}
+.bub .u{display:block;font-size:14.5px;color:var(--ink-soft);margin-top:3px}
+.msg.me{align-self:flex-end;align-items:flex-end}
+.msg.me .bub{background:var(--clay);border-color:var(--clay)}
+.msg.me .bub .p{color:#fff}
+.msg.me .bub .u{color:rgba(255,255,255,.78)}
+.msg.you .bub{border-bottom-left-radius:6px}
+.msg.me .bub{border-bottom-right-radius:6px}
+
+/* ── LESSON FOOTER ──────────────────── */
+.l-foot{display:flex;flex-direction:column;gap:9px;margin-top:20px}
+.mark{
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  padding:15px;border-radius:var(--r-md);cursor:pointer;user-select:none;
+  background:var(--moss-wash);border:1.5px solid #C4D9B4;
+  font-weight:700;font-size:15.5px;color:var(--moss);
+  transition:.2s;
+}
+.mark:hover{background:#DDEBD0}
+.mark input{width:21px;height:21px;accent-color:var(--moss);cursor:pointer;margin:0}
+.lesson.done .mark{background:var(--moss);border-color:var(--moss);color:#fff}
+.next{
+  padding:13px;border-radius:var(--r-md);cursor:pointer;
+  background:var(--card);border:1.5px solid var(--sand);
+  font-weight:700;font-size:15px;color:var(--ink-soft);
+  transition:.2s;
+}
+.next:hover{border-color:var(--clay);color:var(--clay)}
+
+/* ── PHRASE OF DAY ──────────────────── */
+.pod{
+  background:var(--roast);color:#FBF0E2;border-radius:var(--r-lg);
+  padding:32px 24px;text-align:center;position:relative;overflow:hidden;
+  box-shadow:0 16px 40px rgba(59,35,26,.24);
+}
+.pod:before{content:"";position:absolute;width:280px;height:280px;border-radius:50%;background:rgba(192,73,42,.28);top:-150px;right:-100px}
+.pod > *{position:relative}
+.pod .eyebrow{color:#E8A184;margin-bottom:16px}
+.pod .p{font-family:var(--font-d);font-weight:800;font-size:clamp(25px,6.2vw,34px);line-height:1.22}
+.pod .tr{display:inline-block;margin-top:12px;font-size:14px;font-weight:600;color:#F0C4AE;background:rgba(232,161,132,.16);padding:4px 13px;border-radius:100px}
+.pod .u{font-size:16.5px;color:rgba(251,240,226,.8);margin-top:12px}
+.pod .btns{display:flex;gap:9px;justify-content:center;margin-top:22px;flex-wrap:wrap}
+.pod button{
+  font-weight:700;font-size:14.5px;cursor:pointer;
+  border-radius:100px;padding:12px 22px;
+  border:1.5px solid rgba(251,240,226,.28);background:transparent;color:#FBF0E2;
+  transition:.18s;
+}
+.pod button:hover{background:rgba(251,240,226,.12)}
+.pod button.solid{background:var(--clay);border-color:var(--clay)}
+.pod button.solid:hover{background:#D2542F}
+
+/* ── FINISH ─────────────────────────── */
+.finish{
+  background:var(--card);border:1px solid var(--sand);border-radius:var(--r-lg);
+  padding:34px 24px;text-align:center;box-shadow:var(--shadow-sm);
+}
+.finish .em{font-size:42px;display:block;margin-bottom:14px}
+.finish h2{font-size:27px;margin-bottom:10px}
+.finish p{color:var(--ink-soft);font-size:16px;max-width:42ch;margin:0 auto 22px}
+.tg{
+  display:inline-flex;align-items:center;gap:10px;
+  background:var(--clay);color:#fff;text-decoration:none;
+  font-weight:700;font-size:16.5px;padding:15px 28px;border-radius:100px;
+  box-shadow:0 10px 26px rgba(192,73,42,.3);transition:.2s;
+}
+.tg:hover{transform:translateY(-2px);box-shadow:0 14px 30px rgba(192,73,42,.36)}
+.tg .h{font-weight:500;font-size:13.5px;opacity:.85}
+.finish .tip{margin-top:18px;font-size:13.5px;color:var(--ink-mute);max-width:38ch;margin-left:auto;margin-right:auto}
+
+.foot{padding:34px 0 50px;text-align:center;color:var(--ink-mute);font-size:13px}
+.foot .b{font-family:var(--font-d);font-weight:800;font-size:16px;color:var(--ink);margin-bottom:5px}
+
+/* ── TOAST / CONFETTI ───────────────── */
+#toast{
+  position:fixed;left:50%;bottom:26px;transform:translate(-50%,80px);
+  background:var(--roast);color:#FBF0E2;font-weight:700;font-size:15px;
+  padding:13px 22px;border-radius:100px;z-index:200;
+  box-shadow:0 12px 30px rgba(59,35,26,.3);
+  opacity:0;transition:.32s cubic-bezier(.2,.8,.3,1);pointer-events:none;
+}
+#toast.on{transform:translate(-50%,0);opacity:1}
+#cnf{position:fixed;inset:0;pointer-events:none;z-index:150}
+
+@media (prefers-reduced-motion:reduce){
+  *{animation:none !important;transition:none !important}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap bar">
+    <div class="brand">Polska <span>Easy</span> 🇵🇱</div>
+    <div class="counter">📘 <b id="cTop">0</b>/20 уроків</div>
+  </div>
+  <div class="topline"><i id="topBar"></i></div>
+</header>
+
+<main>
+<div class="wrap">
+
+  <div class="hero">
+    <div class="postcard">
+      <div class="frame">
+        <img src="data:image/jpeg;base64,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" alt="Анастасія, викладачка польської" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="fallback">👩‍🏫</div>
+      </div>
+      <div class="stamp">Polska<br>Easy</div>
+    </div>
+    <div class="tracking"><span class="dot"></span> Книжечка вже в дорозі</div>
+    <h1>Вітаю! Ваша книжечка вже їде до вас 📦
+      <span class="accent">А поки — почнімо вчити польську</span>
+    </h1>
+    <p class="lead">Усе, що потрібно на щодень: живі фрази з транскрипцією кирилицею та діалоги з реального життя — Żabka, лікар, робота, InPost, urząd.</p>
+    <div class="author">Ваша викладачка — <b>Анастасія</b> 🇵🇱</div>
+  </div>
+
+  <div class="tracker">
+    <div class="head">
+      <h2 id="trackTitle">Почнімо з першого уроку</h2>
+      <div class="n"><span id="cNum">0</span>/20</div>
+    </div>
+    <div class="track-bar"><i id="trackBar"></i></div>
+    <div class="miles">
+      <div class="mile" data-at="5"><span class="e">🌱</span>5 уроків</div>
+      <div class="mile" data-at="10"><span class="e">🔥</span>10 уроків</div>
+      <div class="mile" data-at="20"><span class="e">🏆</span>увесь курс</div>
+    </div>
+    <button class="reset" id="reset" type="button">скинути прогрес</button>
+  </div>
+
+  <section>
+    <div class="eyebrow">Крок 1</div>
+    <h2 class="s-title">Оберіть свій рівень</h2>
+    <p class="s-sub">Не знаєте, який ваш? Починайте з «Початківця» — перші два уроки все підкажуть.</p>
+    <div class="levels">
+      <button class="level" type="button" data-lv="a">
+        <span class="arrow">→</span>
+        <span class="icon">🌱</span>
+        <h3>Початківець</h3>
+        <p>З нуля: перші слова, магазин, транспорт, лікар, urząd — усе базове для життя.</p>
+        <span class="foot"><span class="mini-bar"><i id="barA"></i></span><span class="cnt" id="cntA">0/10</span></span>
+      </button>
+      <button class="level" type="button" data-lv="b">
+        <span class="arrow">→</span>
+        <span class="icon">🚀</span>
+        <h3>Впевнений</h3>
+        <p>Вже розумію, хочу говорити: робота, банк, оренда, документи, емоції та сленг.</p>
+        <span class="foot"><span class="mini-bar"><i id="barB"></i></span><span class="cnt" id="cntB">0/10</span></span>
+      </button>
+    </div>
+  </section>
+
+  <section id="lessons">
+    <div class="eyebrow">Крок 2</div>
+    <h2 class="s-title" id="lvTitle"></h2>
+    <p class="s-sub" id="lvSub"></p>
+    <div class="search" id="searchBox">
+      <span class="ico">🔎</span>
+      <input type="search" id="q" placeholder="Знайти фразу: «скільки коштує», «boli»…" autocomplete="off">
+      <button class="clr" id="clr" type="button" aria-label="Очистити пошук">✕</button>
+    </div>
+    <div id="list"></div>
+    <div class="no-res" id="noRes">Нічого не знайшла 🤔 Спробуйте інше слово — або українською, або польською.</div>
+    <div class="xlvl" id="xlvl"><span id="xlvlTxt"></span><button type="button" id="xlvlGo">Показати</button></div>
+  </section>
+
+  <section>
+    <div class="pod">
+      <div class="eyebrow">Фраза дня</div>
+      <div class="p" id="podP"></div>
+      <div class="tr" id="podT"></div>
+      <div class="u" id="podU"></div>
+      <div class="btns">
+        <button class="solid" id="podNew" type="button">🎲 Іншу фразу</button>
+        <button id="podCopy" type="button">📋 Скопіювати</button>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="finish">
+      <span class="em">💌</span>
+      <h2>Питання? Пишіть мені</h2>
+      <p>Щось незрозуміло, застрягли на уроці або хочете перевірити вимову — напишіть, я відповім особисто.</p>
+      <a class="tg" href="https://t.me/Anastasia_kovalenko8" target="_blank" rel="noopener">Telegram <span class="h">@Anastasia_kovalenko8</span></a>
+      <p class="tip">Десять хвилин щодня працюють краще, ніж дві години раз на тиждень 🌿</p>
+    </div>
+  </section>
+
+  <div class="foot">
+    <div class="b">Polska Easy 🇵🇱</div>
+    <div>Курс польської для українців · зроблено з теплом</div>
+  </div>
+
+</div>
+</main>
+
+<div id="toast" role="status" aria-live="polite"></div>
+<canvas id="cnf" aria-hidden="true"></canvas>
+
+<script>
+/* ═══ ДАНІ КУРСУ ═══ */
+const COURSE={
+a:{title:"🌱 Початківець",sub:"Десять уроків з нуля — від «dzień dobry» до візиту в urząd.",lessons:[
+{t:"Перші слова: привітання та ввічливість",e:"👋",
+ ph:[
+ {p:"Dzień dobry",u:"Доброго дня",t:"джень добри"},
+ {p:"Dobry wieczór",u:"Добрий вечір",t:"добри вєчур"},
+ {p:"Cześć",u:"Привіт / Бувай (до своїх)",t:"чещчь"},
+ {p:"Do widzenia",u:"До побачення",t:"до віджєня"},
+ {p:"Dobranoc",u:"Добраніч",t:"добраноц"},
+ {p:"Dziękuję",u:"Дякую",t:"джєнкує"},
+ {p:"Bardzo dziękuję",u:"Дуже дякую",t:"бардзо джєнкує"},
+ {p:"Proszę",u:"Прошу / Будь ласка",t:"проше"},
+ {p:"Przepraszam",u:"Вибачте",t:"пшепрашам"},
+ {p:"Tak / Nie",u:"Так / Ні",t:"так / нє"},
+ {p:"Nie rozumiem",u:"Я не розумію",t:"нє розумєм"},
+ {p:"Czy może pani powtórzyć?",u:"Можете повторити?",t:"чи може пані повтужичь"},
+ {p:"Mówi pan po ukraińsku?",u:"Ви говорите українською?",t:"муві пан по украіньску"},
+ {p:"Nie ma za co",u:"Нема за що",t:"нє ма за цо"},
+ {p:"Miłego dnia!",u:"Гарного дня!",t:"мівего дня"}],
+ d:{title:"У під'їзді, зустріли сусідку",lines:[
+ {w:"Ви",me:1,p:"Dzień dobry, pani Aniu!",u:"Доброго дня, пані Аню!"},
+ {w:"Сусідка",p:"Dzień dobry! Jak się pani czuje?",u:"Доброго дня! Як ви почуваєтесь?"},
+ {w:"Ви",me:1,p:"Dziękuję, dobrze. A pani?",u:"Дякую, добре. А ви?"},
+ {w:"Сусідка",p:"Też dobrze. Miłego dnia!",u:"Теж добре. Гарного дня!"},
+ {w:"Ви",me:1,p:"Nawzajem, do widzenia!",u:"Взаємно, до побачення!"}]}},
+
+{t:"Про себе: знайомство",e:"🙋‍♀️",
+ ph:[
+ {p:"Nazywam się Ołena",u:"Мене звати Олена",t:"називам сє олена"},
+ {p:"Mam na imię Ołena",u:"Моє ім'я Олена",t:"мам на імє олена"},
+ {p:"Jestem z Ukrainy",u:"Я з України",t:"єстем з украіни"},
+ {p:"Mieszkam w Warszawie",u:"Я живу у Варшаві",t:"мєшкам в варшавє"},
+ {p:"Mam trzydzieści lat",u:"Мені тридцять років",t:"мам тшиджєщчі лят"},
+ {p:"Jestem tutaj od roku",u:"Я тут уже рік",t:"єстем тутай од року"},
+ {p:"Uczę się polskiego",u:"Я вчу польську",t:"уче сє польскєго"},
+ {p:"Mówię trochę po polsku",u:"Я трохи говорю польською",t:"мувє трохе по польску"},
+ {p:"Pracuję w sklepie",u:"Я працюю в магазині",t:"працує в склєпє"},
+ {p:"Mam dwoje dzieci",u:"У мене двоє дітей",t:"мам двоє джєчі"},
+ {p:"Miło mi",u:"Приємно познайомитись",t:"міво мі"},
+ {p:"A pan? A pani?",u:"А ви?",t:"а пан? а пані?"},
+ {p:"Jak się pani nazywa?",u:"Як вас звати?",t:"як сє пані назива"},
+ {p:"Skąd pan jest?",u:"Звідки ви?",t:"сконд пан єст"},
+ {p:"Jeszcze się uczę",u:"Я ще вчуся",t:"єщче сє уче"}],
+ d:{title:"Перший день на курсах",lines:[
+ {w:"Марта",p:"Cześć, jestem Marta. A ty?",u:"Привіт, я Марта. А ти?"},
+ {w:"Ви",me:1,p:"Cześć, nazywam się Ołena. Jestem z Ukrainy.",u:"Привіт, мене звати Олена. Я з України."},
+ {w:"Марта",p:"Miło mi. Długo jesteś w Polsce?",u:"Приємно. Довго ти в Польщі?"},
+ {w:"Ви",me:1,p:"Od roku. Mieszkam w Warszawie i uczę się polskiego.",u:"Рік. Живу у Варшаві і вчу польську."},
+ {w:"Марта",p:"Świetnie mówisz!",u:"Ти чудово говориш!"},
+ {w:"Ви",me:1,p:"Dziękuję, ale jeszcze się uczę.",u:"Дякую, але я ще вчуся."}]}},
+
+{t:"Числа, час і дні тижня",e:"🔢",
+ ph:[
+ {p:"jeden, dwa, trzy",u:"один, два, три",t:"єден, два, тши"},
+ {p:"cztery, pięć, sześć",u:"чотири, п'ять, шість",t:"чтери, пєнчь, шещчь"},
+ {p:"siedem, osiem, dziewięć, dziesięć",u:"сім, вісім, дев'ять, десять",t:"щєдем, ощєм, джєвєнчь, джєщєнчь"},
+ {p:"dwadzieścia, sto, tysiąc",u:"двадцять, сто, тисяча",t:"дваджєщчя, сто, тищонц"},
+ {p:"Która godzina?",u:"Котра година?",t:"ктура годжіна"},
+ {p:"Jest ósma rano",u:"Восьма ранку",t:"єст усма рано"},
+ {p:"O której godzinie?",u:"О котрій годині?",t:"о ктурей годжінє"},
+ {p:"dzisiaj / jutro / wczoraj",u:"сьогодні / завтра / вчора",t:"джіщяй / ютро / вчорай"},
+ {p:"poniedziałek, wtorek, środa",u:"понеділок, вівторок, середа",t:"понєджявек, вторек, шрода"},
+ {p:"czwartek, piątek",u:"четвер, п'ятниця",t:"чвартек, пьонтек"},
+ {p:"sobota, niedziela",u:"субота, неділя",t:"собота, нєджєля"},
+ {p:"w przyszłym tygodniu",u:"наступного тижня",t:"в пшишвим тигодню"},
+ {p:"za godzinę",u:"через годину",t:"за годжінє"},
+ {p:"Jestem wolna w sobotę",u:"Я вільна в суботу",t:"єстем вольна в соботе"},
+ {p:"Nie mam czasu",u:"У мене немає часу",t:"нє мам часу"}],
+ d:{title:"Домовляємось про зустріч",lines:[
+ {w:"Подруга",p:"Kiedy masz czas?",u:"Коли ти маєш час?"},
+ {w:"Ви",me:1,p:"W piątek po pracy, około osiemnastej.",u:"У п'ятницю після роботи, близько 18:00."},
+ {w:"Подруга",p:"A w sobotę rano?",u:"А в суботу зранку?"},
+ {w:"Ви",me:1,p:"Sobota rano jest lepsza.",u:"Субота зранку краще."},
+ {w:"Подруга",p:"To o dziesiątej przy kawiarni?",u:"Тоді о десятій біля кав'ярні?"},
+ {w:"Ви",me:1,p:"Super, do zobaczenia w sobotę!",u:"Супер, до зустрічі в суботу!"}]}},
+
+{t:"Продуктовий магазин",e:"🛒",
+ ph:[
+ {p:"Gdzie jest chleb?",u:"Де хліб?",t:"гджє єст хлєб"},
+ {p:"Poproszę dwa kilo jabłek",u:"Два кіло яблук, будь ласка",t:"попроше два кіло ябвек"},
+ {p:"Ile płacę?",u:"Скільки з мене?",t:"ілє пваце"},
+ {p:"Czy mogę zapłacić kartą?",u:"Можу оплатити карткою?",t:"чи моге запвачічь картон"},
+ {p:"Płacę gotówką",u:"Плачу готівкою",t:"пваце готувком"},
+ {p:"Czy ma pani reklamówkę?",u:"У вас є пакет?",t:"чи ма пані реклямувке"},
+ {p:"Poproszę paragon",u:"Чек, будь ласка",t:"попроше парагон"},
+ {p:"Czy to jest świeże?",u:"Це свіже?",t:"чи то єст щвєже"},
+ {p:"Szukam mleka i masła",u:"Шукаю молоко і масло",t:"шукам млєка і масва"},
+ {p:"Gdzie są kasy?",u:"Де каси?",t:"гджє сон каси"},
+ {p:"Czy jest promocja?",u:"Є акція?",t:"чи єст промоцья"},
+ {p:"To wszystko, dziękuję",u:"Це все, дякую",t:"то вшистко, джєнкує"},
+ {p:"Czy mogę to wymienić?",u:"Можу це обміняти?",t:"чи моге то вимєнічь"},
+ {p:"Karta Biedronki? Nie mam",u:"Карта Бедронки? Не маю",t:"карта бєдронкі? нє мам"},
+ {p:"Termin ważności minął",u:"Термін придатності минув",t:"термін важнощчі мінов"}],
+ d:{title:"На касі в Biedronka",lines:[
+ {w:"Касирка",p:"Dzień dobry, karta Biedronki?",u:"Доброго дня, карта Бедронки?"},
+ {w:"Ви",me:1,p:"Nie mam, dziękuję.",u:"Не маю, дякую."},
+ {w:"Касирка",p:"Razem czterdzieści siedem złotych.",u:"Разом сорок сім злотих."},
+ {w:"Ви",me:1,p:"Czy mogę zapłacić kartą?",u:"Можу оплатити карткою?"},
+ {w:"Касирка",p:"Oczywiście. Reklamówka potrzebna?",u:"Звісно. Пакет потрібен?"},
+ {w:"Ви",me:1,p:"Tak, poproszę jedną i paragon.",u:"Так, один і чек, будь ласка."}]}},
+
+{t:"Żabka та кав'ярня",e:"☕",
+ ph:[
+ {p:"Poproszę kawę",u:"Каву, будь ласка",t:"попроше каве"},
+ {p:"Małą czy dużą?",u:"Малу чи велику?",t:"мавон чи дужон"},
+ {p:"Z mlekiem, proszę",u:"З молоком, будь ласка",t:"з млєкєм, проше"},
+ {p:"Bez cukru",u:"Без цукру",t:"без цукру"},
+ {p:"Na miejscu czy na wynos?",u:"Тут чи з собою?",t:"на мєйсцу чи на винос"},
+ {p:"Na wynos, proszę",u:"З собою, будь ласка",t:"на винос, проше"},
+ {p:"Poproszę hot doga",u:"Хот-дог, будь ласка",t:"попроше хот дога"},
+ {p:"Czy jest wolny stolik?",u:"Є вільний столик?",t:"чи єст вольни столік"},
+ {p:"Gdzie jest toaleta?",u:"Де туалет?",t:"гджє єст тоалета"},
+ {p:"Czy jest wi-fi?",u:"Є вайфай?",t:"чи єст вайфай"},
+ {p:"Poproszę rachunek",u:"Рахунок, будь ласка",t:"попроше рахунек"},
+ {p:"Smacznego!",u:"Смачного!",t:"смачнего"},
+ {p:"Bardzo dobre, dziękuję",u:"Дуже смачно, дякую",t:"бардзо добре, джєнкує"},
+ {p:"Czy mogę doładować telefon?",u:"Можу поповнити телефон?",t:"чи моге довадовачь телефон"},
+ {p:"Reszty nie trzeba",u:"Решти не треба",t:"решти нє тшеба"}],
+ d:{title:"Ранок у Żabce",lines:[
+ {w:"Ви",me:1,p:"Dzień dobry, poproszę dużą kawę z mlekiem.",u:"Доброго дня, велику каву з молоком."},
+ {w:"Продавець",p:"Na miejscu czy na wynos?",u:"Тут чи з собою?"},
+ {w:"Ви",me:1,p:"Na wynos.",u:"З собою."},
+ {w:"Продавець",p:"Coś jeszcze?",u:"Щось іще?"},
+ {w:"Ви",me:1,p:"Poproszę hot doga. Ile płacę?",u:"Хот-дог, будь ласка. Скільки з мене?"},
+ {w:"Продавець",p:"Osiemnaście złotych. Smacznego!",u:"Вісімнадцять злотих. Смачного!"}]}},
+
+{t:"Транспорт: автобус, трамвай, потяг",e:"🚌",
+ ph:[
+ {p:"Gdzie jest przystanek?",u:"Де зупинка?",t:"гджє єст пшистанек"},
+ {p:"Który autobus jedzie do centrum?",u:"Який автобус їде в центр?",t:"ктури аутобус єджє до центрум"},
+ {p:"Poproszę bilet dwudziestominutowy",u:"Квиток на 20 хвилин",t:"попроше білєт двуджєстомінутови"},
+ {p:"Gdzie mogę skasować bilet?",u:"Де прокомпостувати квиток?",t:"гджє моге скасовачь білєт"},
+ {p:"Czy ten tramwaj jedzie na Wolę?",u:"Цей трамвай їде на Волю?",t:"чи тен трамвай єджє на волє"},
+ {p:"Muszę się przesiąść?",u:"Мені треба пересідати?",t:"муше сє пшещёнщчь"},
+ {p:"Następny przystanek",u:"Наступна зупинка",t:"настемпни пшистанек"},
+ {p:"Wysiadam",u:"Я виходжу",t:"висядам"},
+ {p:"Przepraszam, czy pan wysiada?",u:"Вибачте, ви виходите?",t:"пшепрашам, чи пан висяда"},
+ {p:"Jak dojechać na dworzec?",u:"Як доїхати до вокзалу?",t:"як доєхачь на двожец"},
+ {p:"Bilet miesięczny",u:"Місячний квиток",t:"білєт мєщєнчни"},
+ {p:"Pociąg ma opóźnienie",u:"Потяг запізнюється",t:"почёнг ма опужнєнє"},
+ {p:"Peron drugi",u:"Друга платформа",t:"перон другі"},
+ {p:"Czy to daleko?",u:"Це далеко?",t:"чи то далєко"},
+ {p:"Idę pieszo",u:"Йду пішки",t:"іде пєшо"}],
+ d:{title:"На зупинці",lines:[
+ {w:"Ви",me:1,p:"Przepraszam, czy ten autobus jedzie do centrum?",u:"Вибачте, цей автобус їде в центр?"},
+ {w:"Пан",p:"Nie, musi pani przesiąść się na następnym przystanku.",u:"Ні, вам треба пересісти на наступній зупинці."},
+ {w:"Ви",me:1,p:"A gdzie kupię bilet?",u:"А де купити квиток?"},
+ {w:"Пан",p:"W automacie, przy drzwiach.",u:"В автоматі, біля дверей."},
+ {w:"Ви",me:1,p:"Dziękuję bardzo!",u:"Дуже дякую!"},
+ {w:"Пан",p:"Nie ma za co.",u:"Нема за що."}]}},
+
+{t:"InPost, пачкомат і посилки",e:"📦",
+ ph:[
+ {p:"Mam paczkę w paczkomacie",u:"У мене посилка в пачкоматі",t:"мам пачке в пачкомачє"},
+ {p:"Gdzie jest najbliższy paczkomat?",u:"Де найближчий пачкомат?",t:"гджє єст найбліжши пачкомат"},
+ {p:"Kod odbioru",u:"Код отримання",t:"код одбёру"},
+ {p:"Nie działa skaner",u:"Сканер не працює",t:"нє джява сканер"},
+ {p:"Skrytka się nie otwiera",u:"Комірка не відкривається",t:"скритка сє нє отвєра"},
+ {p:"Chcę nadać paczkę",u:"Хочу відправити посилку",t:"хце надачь пачке"},
+ {p:"Numer przesyłki",u:"Номер відправлення",t:"нумер пшесивкі"},
+ {p:"Kurier nie zastał mnie w domu",u:"Кур'єр не застав мене вдома",t:"кур'єр нє застав мнє в дому"},
+ {p:"Kiedy dotrze paczka?",u:"Коли прийде посилка?",t:"кєди дотше пачка"},
+ {p:"Paczka jest gotowa do odbioru",u:"Посилка готова до отримання",t:"пачка єст готова до одбёру"},
+ {p:"Chcę zwrócić zamówienie",u:"Хочу повернути замовлення",t:"хце звручічь замувєнє"},
+ {p:"Zły rozmiar",u:"Не той розмір",t:"зви розмяр"},
+ {p:"Płatność przy odbiorze",u:"Оплата при отриманні",t:"пватнощчь пши одбёже"},
+ {p:"Paczka jest uszkodzona",u:"Посилка пошкоджена",t:"пачка єст ушкоджона"},
+ {p:"Proszę o pomoc",u:"Допоможіть, будь ласка",t:"проше о помоц"}],
+ d:{title:"Дзвінок на гарячу лінію",lines:[
+ {w:"Ви",me:1,p:"Halo, dzwonię w sprawie paczki.",u:"Алло, телефоную щодо посилки."},
+ {w:"Консультант",p:"Numer przesyłki poproszę.",u:"Номер відправлення, будь ласка."},
+ {w:"Ви",me:1,p:"Sześć, cztery, pięć, osiem... Paczka miała być wczoraj.",u:"6-4-5-8... Посилка мала бути вчора."},
+ {w:"Консультант",p:"Kurier nie zastał pani w domu. Paczka jest w paczkomacie.",u:"Кур'єр не застав вас удома. Посилка в пачкоматі."},
+ {w:"Ви",me:1,p:"Świetnie, mam kod odbioru. Dziękuję!",u:"Чудово, код у мене є. Дякую!"}]}},
+
+{t:"Житло і сусіди",e:"🏠",
+ ph:[
+ {p:"Wynajmuję mieszkanie",u:"Я знімаю квартиру",t:"винаймує мєшканє"},
+ {p:"Kawalerka",u:"Однокімнатна квартира",t:"кавалєрка"},
+ {p:"Czynsz i kaucja",u:"Квартплата і застава",t:"чинш і кауцья"},
+ {p:"Nie działa ogrzewanie",u:"Не працює опалення",t:"нє джява огжеванє"},
+ {p:"Cieknie kran",u:"Тече кран",t:"чєкнє кран"},
+ {p:"Zepsuła się pralka",u:"Зламалася пралка",t:"зепсува сє пралка"},
+ {p:"Proszę wezwać hydraulika",u:"Викличте сантехніка",t:"проше везвачь гидраулика"},
+ {p:"Kiedy przyjdzie właściciel?",u:"Коли прийде власник?",t:"кєди пшийджє власьчічєль"},
+ {p:"Sąsiedzi hałasują",u:"Сусіди шумлять",t:"сонщєджі хавасуйон"},
+ {p:"Cisza nocna od dwudziestej drugiej",u:"Тиша з 22:00",t:"чіша ноцна од двуджєстей другєй"},
+ {p:"Gdzie wyrzucić śmieci?",u:"Куди викинути сміття?",t:"гджє вижуцічь щмєчі"},
+ {p:"Segregacja odpadów",u:"Сортування сміття",t:"сеґреґацья одпадув"},
+ {p:"Rachunek za prąd",u:"Рахунок за світло",t:"рахунек за пронд"},
+ {p:"Umowa najmu",u:"Договір оренди",t:"умова найму"},
+ {p:"Winda nie działa",u:"Ліфт не працює",t:"вінда нє джява"}],
+ d:{title:"Дзвінок власнику квартири",lines:[
+ {w:"Ви",me:1,p:"Dzień dobry, dzwonię, bo cieknie kran w łazience.",u:"Доброго дня, телефоную, бо тече кран у ванній."},
+ {w:"Власник",p:"Od kiedy?",u:"Відколи?"},
+ {w:"Ви",me:1,p:"Od wczoraj wieczorem.",u:"З учорашнього вечора."},
+ {w:"Власник",p:"Jutro przyjdzie hydraulik o dziesiątej. Będzie pani w domu?",u:"Завтра о десятій прийде сантехнік. Ви будете вдома?"},
+ {w:"Ви",me:1,p:"Tak, będę. Bardzo dziękuję!",u:"Так, буду. Дуже дякую!"}]}},
+
+{t:"Лікар і аптека",e:"💊",
+ ph:[
+ {p:"Źle się czuję",u:"Мені погано",t:"жле сє чує"},
+ {p:"Boli mnie głowa",u:"У мене болить голова",t:"болі мнє гвова"},
+ {p:"Boli mnie brzuch i gardło",u:"Болить живіт і горло",t:"болі мнє бжух і гардво"},
+ {p:"Mam gorączkę",u:"У мене температура",t:"мам горончке"},
+ {p:"Mam katar i kaszel",u:"У мене нежить і кашель",t:"мам катар і кашель"},
+ {p:"Potrzebuję lekarza",u:"Мені потрібен лікар",t:"потшебує лєкажа"},
+ {p:"Chcę zapisać się do lekarza",u:"Хочу записатися до лікаря",t:"хце записачь сє до лєкажа"},
+ {p:"Mam ubezpieczenie NFZ",u:"У мене страхування NFZ",t:"мам убезпєченє ен-еф-зет"},
+ {p:"Czy jest wolny termin?",u:"Є вільний час?",t:"чи єст вольни термін"},
+ {p:"Recepta",u:"Рецепт",t:"рецепта"},
+ {p:"Poproszę coś na ból gardła",u:"Щось від болю в горлі",t:"попроше цощ на буль гардва"},
+ {p:"Jestem uczulona na penicylinę",u:"У мене алергія на пеніцилін",t:"єстем учулона на пеніциліне"},
+ {p:"Trzy razy dziennie po jedzeniu",u:"Тричі на день після їжі",t:"тши рази джєннє по єджєню"},
+ {p:"Proszę wezwać pogotowie",u:"Викличте швидку",t:"проше везвачь поготовє"},
+ {p:"Numer alarmowy: sto dwanaście",u:"Екстрений номер: 112",t:"нумер алярмови: сто дванащчє"}],
+ d:{title:"Реєстратура в przychodni",lines:[
+ {w:"Ви",me:1,p:"Dzień dobry, chcę zapisać się do lekarza.",u:"Доброго дня, хочу записатися до лікаря."},
+ {w:"Реєстраторка",p:"Co pani dolega?",u:"Що вас турбує?"},
+ {w:"Ви",me:1,p:"Boli mnie gardło i mam gorączkę.",u:"Болить горло і в мене температура."},
+ {w:"Реєстраторка",p:"Jest wolny termin dziś o piętnastej. Ma pani ubezpieczenie?",u:"Є вільний час сьогодні о 15:00. Ви маєте страхування?"},
+ {w:"Ви",me:1,p:"Tak, NFZ. Proszę bardzo, mój dokument.",u:"Так, NFZ. Ось мій документ."}]}},
+
+{t:"Urząd і документи",e:"📋",
+ ph:[
+ {p:"Chcę złożyć wniosek",u:"Хочу подати заяву",t:"хце звожичь внёсек"},
+ {p:"Numer PESEL",u:"Номер PESEL",t:"нумер песель"},
+ {p:"Karta pobytu",u:"Карта побиту",t:"карта побиту"},
+ {p:"Gdzie mogę pobrać numerek?",u:"Де взяти талон?",t:"гджє моге побрачь нумерек"},
+ {p:"Jakie dokumenty są potrzebne?",u:"Які документи потрібні?",t:"якє сон документи потшебне"},
+ {p:"Paszport i zaświadczenie",u:"Паспорт і довідка",t:"пашпорт і защвядченє"},
+ {p:"Proszę wypełnić formularz",u:"Заповніть формуляр",t:"проше випевнічь формуляж"},
+ {p:"Nie rozumiem tego pisma",u:"Не розумію цього листа",t:"нє розумєм тего пісма"},
+ {p:"Czy mogę prosić o tłumacza?",u:"Можна перекладача?",t:"чи моге прощічь о твумача"},
+ {p:"Kiedy dostanę odpowiedź?",u:"Коли буде відповідь?",t:"кєди достане одповєджь"},
+ {p:"Termin wizyty",u:"Дата візиту",t:"термін візити"},
+ {p:"Meldunek",u:"Прописка",t:"мельдунек"},
+ {p:"Umowa o pracę",u:"Трудовий договір",t:"умова о праце"},
+ {p:"Urząd Skarbowy",u:"Податкова",t:"ужонд скарбови"},
+ {p:"Czy to ostateczna decyzja?",u:"Це остаточне рішення?",t:"чи то остатечна децизья"}],
+ d:{title:"Подаємо на PESEL",lines:[
+ {w:"Ви",me:1,p:"Dzień dobry, chcę złożyć wniosek o PESEL.",u:"Доброго дня, хочу подати заяву на PESEL."},
+ {w:"Урядниця",p:"Ma pani paszport i wypełniony formularz?",u:"У вас є паспорт і заповнений формуляр?"},
+ {w:"Ви",me:1,p:"Paszport tak, formularz nie.",u:"Паспорт так, формуляр ні."},
+ {w:"Урядниця",p:"Proszę wypełnić i pobrać numerek.",u:"Заповніть і візьміть талон."},
+ {w:"Ви",me:1,p:"Przepraszam, nie rozumiem tego pola. Może pani pomóc?",u:"Вибачте, не розумію це поле. Можете допомогти?"},
+ {w:"Урядниця",p:"Oczywiście, tu proszę wpisać adres zamieszkania.",u:"Звісно, тут впишіть адресу проживання."}]}}
+]},
+
+b:{title:"🚀 Впевнений",sub:"Десять уроків для тих, хто вже розуміє — час говорити вільно.",lessons:[
+{t:"Співбесіда на роботу",e:"💼",
+ ph:[
+ {p:"Szukam pracy jako sprzedawczyni",u:"Шукаю роботу продавчинею",t:"шукам праци яко спшедавчиня"},
+ {p:"Mam trzyletnie doświadczenie",u:"Маю трирічний досвід",t:"мам тшилєтнє дощвядченє"},
+ {p:"Wcześniej pracowałam w gastronomii",u:"Раніше працювала в гастрономії",t:"вчещнєй працовавам в гастрономії"},
+ {p:"Jestem osobą odpowiedzialną",u:"Я відповідальна людина",t:"єстем особон одповєджяльнон"},
+ {p:"Szybko się uczę",u:"Я швидко навчаюся",t:"шибко сє уче"},
+ {p:"Jaka jest stawka godzinowa?",u:"Яка ставка за годину?",t:"яка єст ставка годжінова"},
+ {p:"Umowa o pracę czy zlecenie?",u:"Трудовий договір чи злеценє?",t:"умова о праце чи злєценє"},
+ {p:"Ile godzin w tygodniu?",u:"Скільки годин на тиждень?",t:"ілє годжін в тигодню"},
+ {p:"Czy praca jest zmianowa?",u:"Робота позмінна?",t:"чи праца єст змянова"},
+ {p:"Kiedy mogę zacząć?",u:"Коли можу почати?",t:"кєди моге зачончь"},
+ {p:"Mam pytanie o wynagrodzenie",u:"Маю питання про зарплату",t:"мам питанє о винагроджєнє"},
+ {p:"Czy jest okres próbny?",u:"Є випробувальний термін?",t:"чи єст окрес прубни"},
+ {p:"Znam polski na poziomie B1",u:"Знаю польську на рівні B1",t:"знам польскі на позёмє бе-єден"},
+ {p:"Czy zapewniacie zakwaterowanie?",u:"Ви надаєте житло?",t:"чи запевняче закватерованє"},
+ {p:"Dziękuję za spotkanie",u:"Дякую за зустріч",t:"джєнкує за споткане"}],
+ d:{title:"Розмова з менеджером",lines:[
+ {w:"Менеджер",p:"Proszę opowiedzieć o swoim doświadczeniu.",u:"Розкажіть про свій досвід."},
+ {w:"Ви",me:1,p:"Pracowałam trzy lata jako sprzedawczyni, ostatnio w Warszawie.",u:"Я три роки працювала продавчинею, останнє — у Варшаві."},
+ {w:"Менеджер",p:"Czy zna pani polski na poziomie komunikatywnym?",u:"Ви знаєте польську на комунікативному рівні?"},
+ {w:"Ви",me:1,p:"Tak, poziom B1. Rozumiem klientów i szybko się uczę.",u:"Так, рівень B1. Розумію клієнтів і швидко вчуся."},
+ {w:"Менеджер",p:"Oferujemy trzydzieści jeden złotych brutto za godzinę.",u:"Ми пропонуємо 31 злотий брутто за годину."},
+ {w:"Ви",me:1,p:"Czy jest okres próbny? I kiedy mogę zacząć?",u:"Є випробувальний термін? І коли можу почати?"},
+ {w:"Менеджер",p:"Trzy miesiące. Może pani zacząć od poniedziałku.",u:"Три місяці. Можете почати з понеділка."}]}},
+
+{t:"На роботі: колеги і графік",e:"👷‍♀️",
+ ph:[
+ {p:"Czy mogę wziąć wolne?",u:"Можу взяти вихідний?",t:"чи моге вжёнчь вольне"},
+ {p:"Muszę wyjść wcześniej",u:"Мушу піти раніше",t:"муше вийщчь вчещнєй"},
+ {p:"Biorę urlop od poniedziałku",u:"Беру відпустку з понеділка",t:"бёре урлёп од понєджявку"},
+ {p:"Jestem na zwolnieniu lekarskim",u:"Я на лікарняному",t:"єстем на звольнєню лєкарскім"},
+ {p:"Nie zdążę na czas",u:"Не встигну вчасно",t:"нє здонже на час"},
+ {p:"Czy możesz mi pomóc?",u:"Можеш мені допомогти?",t:"чи можеш мі помуц"},
+ {p:"Nie wiem, jak to zrobić",u:"Не знаю, як це зробити",t:"нє вєм, як то зробічь"},
+ {p:"Kto jest za to odpowiedzialny?",u:"Хто за це відповідає?",t:"кто єст за то одповєджяльни"},
+ {p:"Zrobię to do końca dnia",u:"Зроблю до кінця дня",t:"зробє то до конца дня"},
+ {p:"Mam nadgodziny",u:"У мене понаднормові",t:"мам надгоджіни"},
+ {p:"Kiedy jest wypłata?",u:"Коли зарплата?",t:"кєди єст виправа"},
+ {p:"Przepraszam za spóźnienie",u:"Вибачте за запізнення",t:"пшепрашам за спужнєнє"},
+ {p:"Zmiana grafiku",u:"Зміна графіку",t:"змяна графіку"},
+ {p:"Zastąpię cię jutro",u:"Заміню тебе завтра",t:"застомпє чє ютро"},
+ {p:"Dobra robota!",u:"Гарна робота!",t:"добра робота"}],
+ d:{title:"Просимо відпроситися",lines:[
+ {w:"Ви",me:1,p:"Kasiu, mam prośbę. Muszę wyjść wcześniej w piątek.",u:"Касю, маю прохання. Мушу піти раніше в п'ятницю."},
+ {w:"Касія",p:"O której?",u:"О котрій?"},
+ {w:"Ви",me:1,p:"O czternastej, mam wizytę u lekarza.",u:"О 14:00, маю візит до лікаря."},
+ {w:"Касія",p:"Dobrze, ale kto cię zastąpi?",u:"Добре, але хто тебе замінить?"},
+ {w:"Ви",me:1,p:"Marek. Już z nim rozmawiałam, zgodził się.",u:"Марек. Я вже з ним говорила, він погодився."},
+ {w:"Касія",p:"Świetnie, zmienię grafik. Dzięki, że uprzedziłaś.",u:"Чудово, зміню графік. Дякую, що попередила."}]}},
+
+{t:"Телефонна розмова",e:"☎️",
+ ph:[
+ {p:"Halo, słucham",u:"Алло, слухаю",t:"халё, свухам"},
+ {p:"Z tej strony Ołena",u:"Це Олена (по телефону)",t:"з тей строни олена"},
+ {p:"Czy zastałam pana Kowalskiego?",u:"Чи можу почути пана Ковальського?",t:"чи заставам пана ковальскєго"},
+ {p:"Chwileczkę, łączę",u:"Хвилинку, з'єдную",t:"хвілєчке, вонче"},
+ {p:"Niestety, nie ma go teraz",u:"На жаль, його зараз немає",t:"нєстети, нє ма го тераз"},
+ {p:"Czy mogę zostawić wiadomość?",u:"Можу залишити повідомлення?",t:"чи моге зоставічь вядомощчь"},
+ {p:"Oddzwonię później",u:"Передзвоню пізніше",t:"оддзвонє пужнєй"},
+ {p:"Słabo pana słyszę",u:"Погано вас чую",t:"свабо пана свише"},
+ {p:"Może pan mówić wolniej?",u:"Можете говорити повільніше?",t:"може пан мувічь вольнєй"},
+ {p:"Dzwonię w sprawie ogłoszenia",u:"Телефоную щодо оголошення",t:"дзвонє в справє огвошеня"},
+ {p:"Czy mieszkanie jest jeszcze wolne?",u:"Квартира ще вільна?",t:"чи мєшканє єст єщче вольне"},
+ {p:"Chciałabym umówić się na wizytę",u:"Хотіла б записатися на візит",t:"хчявабим умувічь сє на візите"},
+ {p:"Proszę o kontakt SMS-em",u:"Напишіть мені SMS, будь ласка",t:"проше о контакт есемесем"},
+ {p:"Pomyliłam numer",u:"Я помилилася номером",t:"помиливам нумер"},
+ {p:"Dziękuję, do usłyszenia",u:"Дякую, до почуття",t:"джєнкує, до усвишеня"}],
+ d:{title:"Дзвінок щодо оголошення",lines:[
+ {w:"Власник",p:"Halo, słucham?",u:"Алло, слухаю?"},
+ {w:"Ви",me:1,p:"Dzień dobry, dzwonię w sprawie ogłoszenia. Czy mieszkanie jest jeszcze wolne?",u:"Доброго дня, телефоную щодо оголошення. Квартира ще вільна?"},
+ {w:"Власник",p:"Tak, jest wolne.",u:"Так, вільна."},
+ {w:"Ви",me:1,p:"Czy w cenie są media?",u:"Комуналка входить у ціну?"},
+ {w:"Власник",p:"Czynsz plus prąd, kaucja jednomiesięczna.",u:"Квартплата плюс світло, застава за один місяць."},
+ {w:"Ви",me:1,p:"Czy mogę obejrzeć je jutro po osiemnastej?",u:"Можу подивитися завтра після 18:00?"},
+ {w:"Власник",p:"Tak, proszę o SMS z potwierdzeniem.",u:"Так, напишіть SMS для підтвердження."}]}},
+
+{t:"Банк, рахунки, гроші",e:"🏦",
+ ph:[
+ {p:"Chcę założyć konto osobiste",u:"Хочу відкрити особистий рахунок",t:"хце завожичь конто особісте"},
+ {p:"Czy jest opłata za prowadzenie?",u:"Є плата за обслуговування?",t:"чи єст опвата за проваджєнє"},
+ {p:"Przelew na numer konta",u:"Переказ на номер рахунку",t:"пшелєв на нумер конта"},
+ {p:"Numer rachunku",u:"Номер рахунку",t:"нумер рахунку"},
+ {p:"Chcę wypłacić gotówkę",u:"Хочу зняти готівку",t:"хце виправічь готувке"},
+ {p:"Doładowanie karty",u:"Поповнення картки",t:"довадованє карти"},
+ {p:"Zablokowałam kartę",u:"Я заблокувала картку",t:"заблоковавам карте"},
+ {p:"Nie pamiętam PIN-u",u:"Не пам'ятаю ПІН",t:"нє памєнтам піну"},
+ {p:"Rata kredytu",u:"Платіж по кредиту",t:"рата кредиту"},
+ {p:"Czy mogę rozłożyć na raty?",u:"Можна на розстрочку?",t:"чи моге розвожичь на рати"},
+ {p:"Prowizja i odsetki",u:"Комісія і відсотки",t:"провізья і одсеткі"},
+ {p:"Podatek dochodowy",u:"Податок на доходи",t:"податек доходови"},
+ {p:"Rozliczenie PIT",u:"Річна декларація PIT",t:"розлічєнє піт"},
+ {p:"Przelew nie doszedł",u:"Переказ не дійшов",t:"пшелєв нє дошед"},
+ {p:"Proszę o potwierdzenie przelewu",u:"Прошу підтвердження переказу",t:"проше о потвєрджєнє пшелєву"}],
+ d:{title:"Відкриваємо рахунок",lines:[
+ {w:"Ви",me:1,p:"Dzień dobry, chcę założyć konto osobiste.",u:"Доброго дня, хочу відкрити особистий рахунок."},
+ {w:"Працівниця",p:"Poproszę dokument tożsamości i numer PESEL.",u:"Документ, що посвідчує особу, і номер PESEL, будь ласка."},
+ {w:"Ви",me:1,p:"Proszę bardzo. Czy jest opłata za prowadzenie?",u:"Прошу. Є плата за обслуговування?"},
+ {w:"Працівниця",p:"Zero złotych, jeśli wpływa wynagrodzenie.",u:"Нуль злотих, якщо надходить зарплата."},
+ {w:"Ви",me:1,p:"A przelewy zagraniczne?",u:"А закордонні перекази?"},
+ {w:"Працівниця",p:"Prowizja pięć złotych. Wszystko jest w umowie.",u:"Комісія п'ять злотих. Усе є в договорі."}]}},
+
+{t:"Оренда: договір і проблеми",e:"🔑",
+ ph:[
+ {p:"Szukam mieszkania dwupokojowego",u:"Шукаю двокімнатну квартиру",t:"шукам мєшканя двупокоёвего"},
+ {p:"Czy w cenie są media?",u:"Комуналка входить у ціну?",t:"чи в ценє сон медья"},
+ {p:"Kaucja zwrotna",u:"Застава повертається",t:"кауцья звротна"},
+ {p:"Umowa na rok z możliwością przedłużenia",u:"Договір на рік з можливістю продовження",t:"умова на рок з можлівощчён пшедвуженя"},
+ {p:"Czy mogę obejrzeć mieszkanie?",u:"Можна оглянути квартиру?",t:"чи моге обейжечь мєшканє"},
+ {p:"Kiedy mogę się wprowadzić?",u:"Коли можу заселитися?",t:"кєди моге сє впроваджічь"},
+ {p:"Chcę wypowiedzieć umowę",u:"Хочу розірвати договір",t:"хце виповєджєчь умове"},
+ {p:"Miesięczny okres wypowiedzenia",u:"Місячний строк попередження",t:"мєщєнчни окрес виповєджєня"},
+ {p:"To nie moja wina",u:"Це не моя провина",t:"то нє моя віна"},
+ {p:"Uszkodzenie było wcześniej",u:"Пошкодження було раніше",t:"ушкоджєнє биво вчещнєй"},
+ {p:"Proszę o zwrot kaucji",u:"Прошу повернути заставу",t:"проше о зврот кауцьї"},
+ {p:"Protokół zdawczo-odbiorczy",u:"Акт приймання-передачі",t:"протокув здавчо-одбёрчи"},
+ {p:"Właściciel podniósł czynsz",u:"Власник підняв оренду",t:"власьчічєль поднюсв чинш"},
+ {p:"Umówmy się na przekazanie kluczy",u:"Домовмось про передачу ключів",t:"умувми сє на пшеказанє ключи"},
+ {p:"Wszystko jest w porządku",u:"Усе гаразд",t:"вшистко єст в пожондку"}],
+ d:{title:"Здаємо квартиру назад",lines:[
+ {w:"Ви",me:1,p:"Chcę wypowiedzieć umowę od końca miesiąca.",u:"Хочу розірвати договір з кінця місяця."},
+ {w:"Власник",p:"Okres wypowiedzenia to miesiąc, więc do trzydziestego.",u:"Строк попередження — місяць, тобто до тридцятого."},
+ {w:"Ви",me:1,p:"Rozumiem. Kiedy dostanę zwrot kaucji?",u:"Розумію. Коли отримаю заставу назад?"},
+ {w:"Власник",p:"Po protokole zdawczo-odbiorczym, do czternastu dni.",u:"Після акта приймання-передачі, до 14 днів."},
+ {w:"Ви",me:1,p:"To zarysowanie było już przed moim wprowadzeniem.",u:"Ця подряпина була ще до мого заселення."},
+ {w:"Власник",p:"Mamy zdjęcia z protokołu, sprawdzimy. Bez obaw.",u:"У нас є фото з акта, перевіримо. Не хвилюйтесь."}]}},
+
+{t:"У лікаря: детальна розмова",e:"🩺",
+ ph:[
+ {p:"Od kiedy ma pani objawy?",u:"Відколи у вас симптоми?",t:"од кєди ма пані об'яви"},
+ {p:"Od trzech dni",u:"Три дні",t:"од тшех дні"},
+ {p:"Ból jest ostry i kłujący",u:"Біль гострий і колючий",t:"буль єст остри і квуйонци"},
+ {p:"Mam duszności",u:"Мені важко дихати",t:"мам душнощчі"},
+ {p:"Kręci mi się w głowie",u:"У мене паморочиться голова",t:"кренці мі сє в гвовє"},
+ {p:"Biorę leki na nadciśnienie",u:"Приймаю ліки від тиску",t:"бёре лєкі на надчіщнєнє"},
+ {p:"Jestem w ciąży",u:"Я вагітна",t:"єстем в чёнжи"},
+ {p:"Potrzebuję skierowania do specjalisty",u:"Мені потрібне направлення до спеціаліста",t:"потшебує скєрованя до спецялісти"},
+ {p:"Muszę zrobić badania krwi",u:"Мені треба здати аналіз крові",t:"муше зробічь бадання крві"},
+ {p:"Wyniki będą za tydzień",u:"Результати будуть за тиждень",t:"виніки бендон за тиджень"},
+ {p:"Czy to jest poważne?",u:"Це серйозно?",t:"чи то єст поважне"},
+ {p:"Czy mogę dostać zwolnienie?",u:"Можу отримати лікарняний?",t:"чи моге достачь звольнєнє"},
+ {p:"Proszę zażywać przez tydzień",u:"Приймайте тиждень",t:"проше зажива́чь пшез тиджень"},
+ {p:"Antybiotyk na receptę",u:"Антибіотик за рецептом",t:"антибётик на рецепте"},
+ {p:"Dziękuję, czuję się lepiej",u:"Дякую, мені краще",t:"джєнкує, чує сє лєпєй"}],
+ d:{title:"У кабінеті лікаря",lines:[
+ {w:"Лікар",p:"Od kiedy ma pani te objawy?",u:"Відколи у вас ці симптоми?"},
+ {w:"Ви",me:1,p:"Od trzech dni. Ból jest ostry i mam duszności.",u:"Три дні. Біль гострий і мені важко дихати."},
+ {w:"Лікар",p:"Bierze pani jakieś leki?",u:"Ви приймаєте якісь ліки?"},
+ {w:"Ви",me:1,p:"Tak, na nadciśnienie. Jestem uczulona na penicylinę.",u:"Так, від тиску. У мене алергія на пеніцилін."},
+ {w:"Лікар",p:"Zrobimy badania krwi, wyniki będą jutro.",u:"Зробимо аналіз крові, результати будуть завтра."},
+ {w:"Ви",me:1,p:"Czy mogę dostać zwolnienie na dwa dni?",u:"Можу отримати лікарняний на два дні?"},
+ {w:"Лікар",p:"Oczywiście, wystawię e-zwolnienie.",u:"Звісно, випишу електронний лікарняний."}]}},
+
+{t:"Urząd: складні справи",e:"📄",
+ ph:[
+ {p:"Składam wniosek o kartę pobytu",u:"Подаю заяву на карту побиту",t:"сквадам внёсек о карте побиту"},
+ {p:"Czekam na decyzję od pół roku",u:"Чекаю на рішення пів року",t:"чекам на децизьє од пув року"},
+ {p:"Dostałam wezwanie do uzupełnienia braków",u:"Отримала виклик доповнити документи",t:"доставам везванє до узупевнєня бракув"},
+ {p:"Jakie są terminy?",u:"Які терміни?",t:"якє сон терміни"},
+ {p:"Chcę sprawdzić status sprawy",u:"Хочу перевірити статус справи",t:"хце справджічь статус справи"},
+ {p:"Numer sprawy",u:"Номер справи",t:"нумер справи"},
+ {p:"Odwołanie od decyzji",u:"Оскарження рішення",t:"одвованє од децизьї"},
+ {p:"Pełnomocnictwo",u:"Довіреність",t:"певномоцніцтво"},
+ {p:"Tłumaczenie przysięgłe",u:"Присяжний переклад",t:"твумаченє пшищенгве"},
+ {p:"Poświadczona kopia",u:"Завірена копія",t:"пощвядчона копья"},
+ {p:"Muszę potwierdzić adres zamieszkania",u:"Мушу підтвердити адресу проживання",t:"муше потвєрджічь адрес замєшканя"},
+ {p:"Opłata skarbowa",u:"Державне мито",t:"опвата скарбова"},
+ {p:"Czy mogę złożyć to online?",u:"Можна подати це онлайн?",t:"чи моге звожичь то онлайн"},
+ {p:"Proszę o pisemną odpowiedź",u:"Прошу письмову відповідь",t:"проше о пісемнон одповєджь"},
+ {p:"Do kogo mogę się odwołać?",u:"До кого можу звернутися?",t:"до кого моге сє одвовачь"}],
+ d:{title:"Перевіряємо статус справи",lines:[
+ {w:"Ви",me:1,p:"Dzień dobry, chcę sprawdzić status mojej sprawy.",u:"Доброго дня, хочу перевірити статус своєї справи."},
+ {w:"Урядник",p:"Numer sprawy poproszę.",u:"Номер справи, будь ласка."},
+ {w:"Ви",me:1,p:"WSC piętnaście, dwanaście trzysta czterdzieści pięć.",u:"WSC-15-12345."},
+ {w:"Урядник",p:"Dostała pani wezwanie — brakuje tłumaczenia przysięgłego.",u:"Ви отримали виклик — бракує присяжного перекладу."},
+ {w:"Ви",me:1,p:"Mam czternaście dni, tak?",u:"У мене чотирнадцять днів, так?"},
+ {w:"Урядник",p:"Zgadza się. Można złożyć osobiście albo wysłać pocztą.",u:"Саме так. Можна подати особисто або надіслати поштою."}]}},
+
+{t:"Свої послуги і клієнти",e:"💅",
+ ph:[
+ {p:"Zapraszam serdecznie",u:"Щиро запрошую",t:"запрашам сердечнє"},
+ {p:"Ile kosztuje zabieg?",u:"Скільки коштує процедура?",t:"ілє коштує забєг"},
+ {p:"Mam wolny termin w czwartek",u:"Маю вільне віконце в четвер",t:"мам вольни термін в чвартек"},
+ {p:"Proszę o zaliczkę",u:"Прошу передоплату",t:"проше о залічке"},
+ {p:"Odwołanie wizyty na dobę przed",u:"Скасування візиту за добу",t:"одвованє візити на добе пшед"},
+ {p:"Wystawiam fakturę",u:"Виставляю рахунок-фактуру",t:"виставям фактуре"},
+ {p:"Czy mogę prosić o opinię?",u:"Можна попросити відгук?",t:"чи моге прощічь о опінє"},
+ {p:"Polecam znajomym",u:"Раджу знайомим",t:"полєцам знаёмим"},
+ {p:"Czy jest gwarancja?",u:"Є гарантія?",t:"чи єст гваранцья"},
+ {p:"Coś poszło nie tak",u:"Щось пішло не так",t:"цощ пошво нє так"},
+ {p:"Bardzo mi przykro",u:"Мені дуже прикро",t:"бардзо мі пшикро"},
+ {p:"Naprawię to bezpłatnie",u:"Виправлю це безкоштовно",t:"направє то безпватнє"},
+ {p:"Termin realizacji",u:"Термін виконання",t:"термін реалізацьї"},
+ {p:"Dziękuję za zaufanie",u:"Дякую за довіру",t:"джєнкує за зауфанє"},
+ {p:"Do zobaczenia następnym razem",u:"До наступного разу",t:"до зобачєня настемпним разем"}],
+ d:{title:"Запис клієнтки",lines:[
+ {w:"Клієнтка",p:"Dzień dobry, chciałabym umówić się na paznokcie.",u:"Доброго дня, хотіла б записатися на нігті."},
+ {w:"Ви",me:1,p:"Mam wolny termin w czwartek o siedemnastej.",u:"Маю вільне віконце в четвер о 17:00."},
+ {w:"Клієнтка",p:"Pasuje. Ile kosztuje?",u:"Підходить. Скільки коштує?"},
+ {w:"Ви",me:1,p:"Sto sześćdziesiąt złotych, zaliczka pięćdziesiąt.",u:"Сто шістдесят злотих, передоплата п'ятдесят."},
+ {w:"Клієнтка",p:"Dobrze, zrobię przelew dziś.",u:"Добре, зроблю переказ сьогодні."},
+ {w:"Ви",me:1,p:"Dziękuję za zaufanie, do zobaczenia w czwartek!",u:"Дякую за довіру, до зустрічі в четвер!"}]}},
+
+{t:"Емоції, думки, дискусія",e:"💬",
+ ph:[
+ {p:"Wydaje mi się, że...",u:"Мені здається, що...",t:"видає мі сє, же"},
+ {p:"Moim zdaniem",u:"На мою думку",t:"моім зданєм"},
+ {p:"Zgadzam się z panią",u:"Погоджуюся з вами",t:"згадзам сє з панён"},
+ {p:"Nie zgadzam się",u:"Не погоджуюся",t:"нє згадзам сє"},
+ {p:"Masz rację",u:"Твоя правда",t:"маш рацьє"},
+ {p:"To mnie denerwuje",u:"Мене це дратує",t:"то мнє денервує"},
+ {p:"Jestem zmęczona",u:"Я втомлена",t:"єстем змєнчона"},
+ {p:"Cieszę się bardzo",u:"Дуже радію",t:"чєше сє бардзо"},
+ {p:"Martwię się o dzieci",u:"Хвилююся за дітей",t:"мартвє сє о джєчі"},
+ {p:"Tęsknię za domem",u:"Сумую за домом",t:"тенскнє за домем"},
+ {p:"Dam sobie radę",u:"Я впораюся",t:"дам собє радє"},
+ {p:"Szkoda, że tak wyszło",u:"Шкода, що так вийшло",t:"шкода, же так вишво"},
+ {p:"Może innym razem",u:"Може, іншим разом",t:"може інним разем"},
+ {p:"Wolałabym nie",u:"Я б краще ні",t:"воляабим нє"},
+ {p:"Trzymaj się!",u:"Тримайся!",t:"тшимай сє"}],
+ d:{title:"Розмова по щирості",lines:[
+ {w:"Подруга",p:"Jak się trzymasz?",u:"Як ти тримаєшся?"},
+ {w:"Ви",me:1,p:"Szczerze? Jestem zmęczona i tęsknię za domem.",u:"Чесно? Я втомлена і сумую за домом."},
+ {w:"Подруга",p:"Rozumiem. Też tak miałam na początku.",u:"Розумію. У мене теж так було спочатку."},
+ {w:"Ви",me:1,p:"Czasem myślę, że sobie nie poradzę.",u:"Іноді думаю, що не впораюся."},
+ {w:"Подруга",p:"Dasz radę. Naprawdę robisz ogromne postępy.",u:"Ти впораєшся. Ти справді робиш величезний прогрес."},
+ {w:"Ви",me:1,p:"Dzięki. Dobrze mieć kogoś takiego obok.",u:"Дякую. Добре мати когось такого поруч."}]}},
+
+{t:"Розмовна мова і сленг",e:"😎",
+ ph:[
+ {p:"No dobra",u:"Ну добре",t:"но добра"},
+ {p:"Spoko",u:"Норм, спокуха",t:"споко"},
+ {p:"Jasne!",u:"Ясно! Звісно!",t:"ясне"},
+ {p:"W porządku",u:"Все окей",t:"в пожондку"},
+ {p:"Co słychać?",u:"Як справи?",t:"цо свихачь"},
+ {p:"Dawno się nie widzieliśmy",u:"Давно не бачились",t:"давно сє нє віджєлішми"},
+ {p:"Mam to gdzieś",u:"Мені байдуже",t:"мам то гджєщ"},
+ {p:"Nie ma sprawy",u:"Без проблем",t:"нє ма справи"},
+ {p:"Daj znać",u:"Дай знати",t:"дай значь"},
+ {p:"Wpadnij do mnie",u:"Заскоч до мене",t:"впадній до мнє"},
+ {p:"Ogarnę to",u:"Я це розрулю",t:"огарне то"},
+ {p:"Jestem w kropce",u:"Я в глухому куті",t:"єстем в кропце"},
+ {p:"Trzymam kciuki",u:"Тримаю кулачки",t:"тшимам кцюкі"},
+ {p:"Głowa do góry",u:"Вище голову",t:"гвова до гури"},
+ {p:"Na razie!",u:"Поки!",t:"на разє"}],
+ d:{title:"Зустріч на вулиці",lines:[
+ {w:"Знайома",p:"Cześć! Co słychać?",u:"Привіт! Як справи?"},
+ {w:"Ви",me:1,p:"Spoko, dawno się nie widzieliśmy!",u:"Норм, давно не бачились!"},
+ {w:"Знайома",p:"Wpadniesz do mnie w niedzielę na kawę?",u:"Заскочиш до мене в неділю на каву?"},
+ {w:"Ви",me:1,p:"Jasne, o której?",u:"Звісно, о котрій?"},
+ {w:"Знайома",p:"Koło piętnastej. Daj znać, gdybyś się spóźniała.",u:"Близько 15:00. Дай знати, якщо запізнюватимешся."},
+ {w:"Ви",me:1,p:"Nie ma sprawy. Trzymaj się, na razie!",u:"Без проблем. Тримайся, поки!"}]}}
+]}};
+
+const PODS=[
+ {p:"Powoli, ale do przodu",u:"Повільно, але вперед",t:"пово́лі, алє до пшоду"},
+ {p:"Nie ma tego złego, co by na dobre nie wyszło",u:"Немає лиха без добра",t:"нє ма тего звего, цо би на добре нє вишво"},
+ {p:"Dam sobie radę",u:"Я впораюся",t:"дам собє радє"},
+ {p:"Trzymam kciuki",u:"Тримаю за тебе кулачки",t:"тшимам кцюкі"},
+ {p:"Głowa do góry",u:"Вище голову",t:"гвова до гури"},
+ {p:"Kropla drąży skałę",u:"Крапля камінь точить",t:"кропля дронжи скаве"},
+ {p:"Wszystko będzie dobrze",u:"Усе буде добре",t:"вшистко бенджє добже"},
+ {p:"Krok po kroku",u:"Крок за кроком",t:"крок по кроку"},
+ {p:"Miłego dnia!",u:"Гарного дня!",t:"мівего дня"},
+ {p:"Uczę się każdego dnia",u:"Я вчуся щодня",t:"уче сє каждего дня"},
+ {p:"Kto pyta, nie błądzi",u:"Хто питає, той не блукає",t:"кто пита, нє бвонджі"},
+ {p:"Jeszcze się uczę, ale idzie mi coraz lepiej",u:"Я ще вчуся, але виходить усе краще",t:"єщче сє уче, алє іджє мі цораз лєпєй"},
+ {p:"Bez pracy nie ma kołaczy",u:"Без труда нема плода",t:"без праци нє ма ковачи"},
+ {p:"Dziś zrobiłam coś dla siebie",u:"Сьогодні я зробила щось для себе",t:"джіщ зробівам цощ для щєбє"},
+ {p:"Czas na kawę i polski",u:"Час на каву і польську",t:"час на каве і польскі"}
+];
+
+/* ═══ ПРОГРЕС ═══ */
+const KEY="polska-easy-v2";
+let fallback={};
+const store={
+  get(){try{return JSON.parse(localStorage.getItem(KEY)||"{}")}catch(e){return fallback}},
+  set(o){fallback=o;try{localStorage.setItem(KEY,JSON.stringify(o))}catch(e){}}
+};
+let done=store.get();
+let level=null;
+let pendingQ="";
+
+/* ═══ УТИЛІТИ ═══ */
+const $=id=>document.getElementById(id);
+const esc=s=>s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+let tId;
+function toast(msg){
+  const t=$("toast");t.textContent=msg;t.classList.add("on");
+  clearTimeout(tId);tId=setTimeout(()=>t.classList.remove("on"),2000);
+}
+function copy(text){
+  const ok=()=>toast("Скопійовано ✓");
+  if(navigator.clipboard&&navigator.clipboard.writeText){
+    navigator.clipboard.writeText(text).then(ok).catch(()=>legacy(text,ok));
+  }else legacy(text,ok);
+}
+function legacy(text,ok){
+  const ta=document.createElement("textarea");
+  ta.value=text;ta.style.position="fixed";ta.style.opacity="0";
+  document.body.appendChild(ta);ta.select();
+  try{document.execCommand("copy");ok()}catch(e){}
+  document.body.removeChild(ta);
+}
+
+/* ═══ КОНФЕТІ ═══ */
+const reduce=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+function confetti(){
+  if(reduce)return;
+  const c=$("cnf"),ctx=c.getContext("2d");
+  c.width=innerWidth;c.height=innerHeight;
+  const cols=["#C0492A","#E4763F","#4E7A3E","#E8C07A","#8E3319"];
+  const parts=Array.from({length:70},()=>({
+    x:innerWidth/2+(Math.random()-.5)*220,
+    y:innerHeight*.55,
+    vx:(Math.random()-.5)*11,
+    vy:-Math.random()*15-6,
+    s:5+Math.random()*7,
+    r:Math.random()*6,
+    vr:(Math.random()-.5)*.35,
+    c:cols[(Math.random()*cols.length)|0]
+  }));
+  let f=0;
+  (function tick(){
+    ctx.clearRect(0,0,c.width,c.height);
+    parts.forEach(p=>{
+      p.vy+=.42;p.x+=p.vx;p.y+=p.vy;p.r+=p.vr;
+      ctx.save();ctx.translate(p.x,p.y);ctx.rotate(p.r);
+      ctx.fillStyle=p.c;ctx.fillRect(-p.s/2,-p.s/2,p.s,p.s*.62);ctx.restore();
+    });
+    if(++f<110)requestAnimationFrame(tick);else ctx.clearRect(0,0,c.width,c.height);
+  })();
+}
+
+/* ═══ РЕНДЕР УРОКІВ ═══ */
+const list=$("list");
+function render(lv){
+  level=lv;
+  const data=COURSE[lv];
+  $("lvTitle").textContent=data.title;
+  $("lvSub").textContent=data.sub;
+  list.innerHTML=data.lessons.map((les,i)=>{
+    const id=lv+"-"+i;
+    const isDone=!!done[id];
+    return `<article class="lesson${isDone?" done":""}" data-id="${id}" data-i="${i}">
+      <button class="l-head" type="button" aria-expanded="false">
+        <span class="l-num">${isDone?"✓":i+1}</span>
+        <span class="l-txt">
+          <span class="t">${les.e} ${esc(les.t)}</span>
+          <span class="m">${les.ph.length} фраз · діалог · ${isDone?"пройдено":"~10 хвилин"}</span>
+        </span>
+        <span class="l-chev">▼</span>
+      </button>
+      <div class="l-body">
+        <div class="legend">
+          <div><b>Dzień dobry</b> — як пишеться польською</div>
+          <div><span class="tr">джень добри</span> — як це вимовляти</div>
+          <div>Доброго дня — що це означає</div>
+        </div>
+        <div class="block-t">Фрази уроку</div>
+        ${les.ph.map((f,j)=>`<button class="phrase" type="button" data-c="${j}">
+          <span class="i">${j+1}</span>
+          <span class="body">
+            <span class="pl">${esc(f.p)}</span>
+            <span class="tr">${esc(f.t)}</span>
+            <span class="uk">${esc(f.u)}</span>
+          </span>
+          <span class="cp">📋</span>
+        </button>`).join("")}
+        <div class="block-t">Діалог із життя</div>
+        <p class="dlg-note">${esc(les.d.title)}</p>
+        <div class="chat">
+          ${les.d.lines.map(l=>`<div class="msg ${l.me?"me":"you"}">
+            <span class="who">${esc(l.w)}</span>
+            <span class="bub"><span class="p">${esc(l.p)}</span><span class="u">${esc(l.u)}</span></span>
+          </div>`).join("")}
+        </div>
+        <div class="l-foot">
+          <label class="mark">
+            <input type="checkbox" data-id="${id}"${isDone?" checked":""}>
+            <span>${isDone?"Урок пройдено ✓":"Позначити урок пройденим"}</span>
+          </label>
+          ${i<9?`<button class="next" type="button" data-next="${i+1}">Далі: урок ${i+2} →</button>`:""}
+        </div>
+      </div>
+    </article>`;
+  }).join("");
+  $("lessons").classList.add("show");
+  $("q").value="";$("searchBox").classList.remove("filled");
+  $("noRes").classList.remove("show");$("xlvl").classList.remove("show");
+  if(pendingQ){const q=$("q");q.value=pendingQ;pendingQ="";q.dispatchEvent(new Event("input"));}
+  update();
+}
+
+/* ═══ ВЗАЄМОДІЯ ═══ */
+list.addEventListener("click",e=>{
+  const head=e.target.closest(".l-head");
+  if(head){
+    const card=head.parentElement;
+    const open=card.classList.toggle("open");
+    head.setAttribute("aria-expanded",open?"true":"false");
+    return;
+  }
+  const ph=e.target.closest(".phrase");
+  if(ph){
+    const i=+ph.closest(".lesson").dataset.i, j=+ph.dataset.c;
+    copy(COURSE[level].lessons[i].ph[j].p);
+    return;
+  }
+  const nx=e.target.closest(".next");
+  if(nx){
+    const cur=nx.closest(".lesson");
+    cur.classList.remove("open");
+    cur.querySelector(".l-head").setAttribute("aria-expanded","false");
+    const target=list.children[+nx.dataset.next];
+    if(target){
+      target.classList.add("open");
+      target.querySelector(".l-head").setAttribute("aria-expanded","true");
+      target.scrollIntoView({behavior:reduce?"auto":"smooth",block:"start"});
+    }
+  }
+});
+
+list.addEventListener("change",e=>{
+  const cb=e.target.closest("input[type=checkbox]");
+  if(!cb)return;
+  const id=cb.dataset.id, card=cb.closest(".lesson"), i=+card.dataset.i;
+  if(cb.checked){done[id]=1}else{delete done[id]}
+  store.set(done);
+  card.classList.toggle("done",cb.checked);
+  card.querySelector(".l-num").textContent=cb.checked?"✓":i+1;
+  cb.nextElementSibling.textContent=cb.checked?"Урок пройдено ✓":"Позначити урок пройденим";
+  const meta=card.querySelector(".l-txt .m");
+  meta.textContent=meta.textContent.replace(/(пройдено|~10 хвилин)$/,cb.checked?"пройдено":"~10 хвилин");
+  if(cb.checked){confetti();toast(pick());}
+  update();
+});
+function pick(){
+  const n=total();
+  if(n===20)return "Увесь курс пройдено! 🏆";
+  if(n===10)return "Половина позаду — ви круті! 🔥";
+  if(n===5)return "П'ять уроків! Так тримати 🌱";
+  return "Урок пройдено! 🎉";
+}
+
+/* ═══ ПОШУК ═══ */
+$("q").addEventListener("input",e=>{
+  const q=e.target.value.trim().toLowerCase();
+  const box=$("searchBox");
+  box.classList.toggle("filled",q.length>0);
+  let found=0;
+  [...list.children].forEach(card=>{
+    const i=+card.dataset.i, phrases=COURSE[level].lessons[i].ph;
+    const rows=card.querySelectorAll(".phrase");
+    if(!q){
+      card.classList.remove("hide","open");
+      card.querySelector(".l-head").setAttribute("aria-expanded","false");
+      rows.forEach(r=>r.classList.remove("hide"));
+      return;
+    }
+    let hits=0;
+    rows.forEach((r,j)=>{
+      const f=phrases[j];
+      const m=(f.p+" "+f.u+" "+f.t).toLowerCase().includes(q);
+      r.classList.toggle("hide",!m);
+      if(m)hits++;
+    });
+    const titleHit=COURSE[level].lessons[i].t.toLowerCase().includes(q);
+    if(titleHit)rows.forEach(r=>r.classList.remove("hide"));
+    const show=hits>0||titleHit;
+    card.classList.toggle("hide",!show);
+    card.classList.toggle("open",show);
+    card.querySelector(".l-head").setAttribute("aria-expanded",show?"true":"false");
+    if(show)found++;
+  });
+  const other=level==="a"?"b":"a";
+  let oh=0;
+  if(q)COURSE[other].lessons.forEach(l=>l.ph.forEach(f=>{
+    if((f.p+" "+f.u+" "+f.t).toLowerCase().includes(q))oh++;
+  }));
+  $("noRes").classList.toggle("show",q.length>0&&found===0&&oh===0);
+  const x=$("xlvl");
+  x.classList.toggle("show",oh>0);
+  if(oh>0)$("xlvlTxt").textContent=`Ще ${oh} ${oh===1?"фраза":oh<5?"фрази":"фраз"} у рівні «${other==="a"?"Початківець":"Впевнений"}»`;
+});
+$("xlvlGo").addEventListener("click",()=>{
+  pendingQ=$("q").value;
+  document.querySelector(`.level[data-lv="${level==="a"?"b":"a"}"]`).click();
+});
+$("clr").addEventListener("click",()=>{
+  const q=$("q");q.value="";q.dispatchEvent(new Event("input"));q.focus();
+});
+
+/* ═══ ПРОГРЕС UI ═══ */
+function cnt(lv){let n=0;for(let i=0;i<10;i++)if(done[lv+"-"+i])n++;return n}
+function total(){return cnt("a")+cnt("b")}
+function update(){
+  const a=cnt("a"),b=cnt("b"),t=a+b,pct=t/20*100;
+  $("cTop").textContent=t;
+  $("cNum").textContent=t;
+  $("topBar").style.width=pct+"%";
+  $("trackBar").style.width=pct+"%";
+  $("cntA").textContent=a+"/10";$("cntB").textContent=b+"/10";
+  $("barA").style.width=a*10+"%";$("barB").style.width=b*10+"%";
+  $("trackTitle").textContent =
+    t===0?"Почнімо з першого уроку":
+    t<5?"Гарний старт — так тримати":
+    t<10?"Ви вже в темпі 🔥":
+    t<20?"Фінішна пряма — залишилось трохи":
+    "Увесь курс пройдено! Ви це зробили 🎉";
+  document.querySelectorAll(".mile").forEach(m=>m.classList.toggle("hit",t>=+m.dataset.at));
+}
+
+/* ═══ РІВНІ ═══ */
+document.querySelectorAll(".level").forEach(btn=>{
+  btn.addEventListener("click",()=>{
+    document.querySelectorAll(".level").forEach(b=>b.classList.remove("active"));
+    btn.classList.add("active");
+    render(btn.dataset.lv);
+    setTimeout(()=>$("lessons").scrollIntoView({behavior:reduce?"auto":"smooth",block:"start"}),80);
+  });
+});
+
+$("reset").addEventListener("click",()=>{
+  if(!confirm("Скинути весь прогрес курсу?"))return;
+  done={};store.set(done);
+  if(level)render(level);else update();
+  toast("Прогрес скинуто");
+});
+
+/* ═══ ФРАЗА ДНЯ ═══ */
+let pod=null;
+function newPod(){
+  let f;do{f=PODS[(Math.random()*PODS.length)|0]}while(f===pod&&PODS.length>1);
+  pod=f;
+  $("podP").textContent=f.p;$("podT").textContent=f.t;$("podU").textContent=f.u;
+}
+$("podNew").addEventListener("click",newPod);
+$("podCopy").addEventListener("click",()=>copy(pod.p+" — "+pod.u));
+
+newPod();update();
+</script>
+</body>
+</html>
