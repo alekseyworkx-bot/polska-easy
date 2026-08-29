@@ -10,6 +10,7 @@ const styleEnd = rest.indexOf('</style>') + 8;
 const css = rest.slice(0, styleEnd);
 const body = rest.slice(styleEnd).trim();
 
+const SITE = 'https://alekseyworkx-bot.github.io/polska-easy/';
 const DESC = 'Курс польської мови для українців: два рівні, 20 уроків, живі фрази з транскрипцією кирилицею та діалоги з реального життя.';
 
 const out = `<!DOCTYPE html>
@@ -24,11 +25,14 @@ const out = `<!DOCTYPE html>
 <meta property="og:site_name" content="Polska Easy">
 <meta property="og:title" content="Polska Easy 🇵🇱 — курс польської для українців">
 <meta property="og:description" content="${DESC}">
-<meta property="og:image" content="preview.jpg">
-<meta name="twitter:card" content="summary_large_image">
+<meta property="og:url" content="${SITE}">
+<meta property="og:image" content="${SITE}preview.jpg">
+<meta property="og:image:width" content="340">
+<meta property="og:image:height" content="340">
+<meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Polska Easy 🇵🇱">
 <meta name="twitter:description" content="${DESC}">
-<meta name="twitter:image" content="preview.jpg">
+<meta name="twitter:image" content="${SITE}preview.jpg">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🇵🇱</text></svg>">
 ${head}
 ${css}
